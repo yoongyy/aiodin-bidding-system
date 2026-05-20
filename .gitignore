@@ -1,0 +1,8 @@
+vendor/
+node_modules/
+storage/products.json
+storage/biddings.json
+.phpunit.cache/
+.env
+coverage/
+dist/

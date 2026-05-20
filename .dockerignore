@@ -1,0 +1,11 @@
+.git
+.gitignore
+.env
+node_modules
+vendor
+tests
+.phpunit.cache
+npm-debug.log
+coverage
+dist
+*.md

@@ -1,0 +1,19 @@
+{
+    "slug": "single-product",
+    "title": "Vintage Leica Camera",
+    "description": "A single-item auction with a one-minute countdown that starts on the first valid bid.",
+    "imageUrl": "",
+    "currency": "MYR",
+    "startingPrice": 500,
+    "durationSeconds": 60,
+    "status": "scheduled",
+    "currentBid": null,
+    "currentBidder": null,
+    "startedAt": null,
+    "endsAt": null,
+    "endedAt": null,
+    "winner": null,
+    "bids": [],
+    "createdAt": "2026-05-20T08:41:41+00:00",
+    "updatedAt": "2026-05-20T08:41:41+00:00"
+}
