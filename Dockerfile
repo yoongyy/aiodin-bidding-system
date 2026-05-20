@@ -13,10 +13,10 @@ RUN composer install \
 FROM php:8.3-cli-bookworm
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends $PHPIZE_DEPS libssl-dev libzstd-dev pkg-config ca-certificates \
+    && apt-get install -y --no-install-recommends $PHPIZE_DEPS libssl-dev libzstd-dev libbsd-dev libbsd0 pkg-config ca-certificates \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb \
-    && apt-get purge -y --auto-remove $PHPIZE_DEPS libssl-dev libzstd-dev pkg-config \
+    && apt-get purge -y --auto-remove $PHPIZE_DEPS libssl-dev libzstd-dev libbsd-dev pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
@@ -33,6 +33,7 @@ USER app
 ENV APP_ENV=production
 ENV APP_DEBUG=false
 ENV PORT=8000
+ENV LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libbsd.so.0
 
 EXPOSE 8000
 
