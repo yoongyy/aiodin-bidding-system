@@ -24,7 +24,8 @@ WORKDIR /var/www/html
 COPY --from=vendor /app/vendor ./vendor
 COPY . .
 
-RUN addgroup -S app && adduser -S -G app app \
+RUN addgroup --system app \
+    && adduser --system --ingroup app app \
     && chown -R app:app /var/www/html
 
 USER app
