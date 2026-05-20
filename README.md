@@ -1,4 +1,4 @@
-# Aiodin Bidding System
+# Kenny Bidding System
 
 Live multi-product bidding system built with PHP and MongoDB.
 
