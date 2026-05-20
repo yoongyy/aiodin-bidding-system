@@ -116,6 +116,7 @@ Recommended first option:
   - Supports Dockerfile deployments for PHP apps.
   - Gives a public `onrender.com` URL with TLS.
   - Free instances can spin down on idle and have monthly limits.
+  - This repo includes `render.yaml` for Blueprint deploys.
 
 Other options:
 
@@ -133,6 +134,14 @@ Official docs:
 - Koyeb pricing FAQ: `https://www.koyeb.com/docs/faqs/pricing`
 - Koyeb git/docker deploy: `https://www.koyeb.com/docs/build-and-deploy/deploy-with-git`
 - Railway free trial: `https://docs.railway.com/pricing/free-trial`
+
+Render deploy flow:
+
+1. Push this repo to GitHub.
+2. In Render, choose **New +** → **Blueprint**.
+3. Select this repository (Render reads `render.yaml` automatically).
+4. Set `MONGO_URI` when prompted.
+5. Deploy.
 
 ## Notes
 

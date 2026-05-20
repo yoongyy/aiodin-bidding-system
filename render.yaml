@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: aiodin-bidding-system
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DATABASE
+        value: aiodin_bidding
+      - key: MONGO_PRODUCTS_COLLECTION
+        value: products
+      - key: MONGO_BIDDINGS_COLLECTION
+        value: biddings
