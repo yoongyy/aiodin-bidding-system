@@ -10,12 +10,14 @@ RUN composer install \
     --no-interaction \
     --no-scripts
 
-FROM php:8.3-cli-alpine
+FROM php:8.3-cli-bookworm
 
-RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS openssl-dev \
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends $PHPIZE_DEPS libssl-dev pkg-config ca-certificates \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb \
-    && apk del .build-deps
+    && apt-get purge -y --auto-remove $PHPIZE_DEPS libssl-dev pkg-config \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
 
